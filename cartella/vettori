@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeri casuali</title>
+</head>
+<body>
 
+  <h2>Numeri casuali generati</h2>
+  <div id="griglia"></div>
+
+  <h3>Statistiche</h3>
+  <p id="info"></p>
+
+  <h2>Numeri pari sopra 50</h2>
+  <div id="grigliaPari"></div>
+
+  <script>
+    // creazione array con 100 numeri casuali compresi tra -100 e 100
+    const numeri = [];
+    for (let i = 0; i < 100; i++) {
+      const n = Math.floor(Math.random() * 201) - 100;
+      numeri.push(n);
+    }
+
+    // calcolo media dei numeri
+    let totale = 0;
+    for (let x of numeri) {
+      totale += x;
+    }
+    const media = totale / numeri.length;
+
+    // determina massimo e minimo
+    let max = numeri[0];
+    let min = numeri[0];
+    for (let i = 1; i < numeri.length; i++) {
+      if (numeri[i] > max) max = numeri[i];
+      if (numeri[i] < min) min = numeri[i];
+    }
+
+    // estrazione dei numeri pari maggiori di 50
+    const pariMaggiori = [];
+    for (let valore of numeri) {
+      if (valore > 50 && valore % 2 === 0) {
+        pariMaggiori.push(valore);
+      }
+    }
+
+    // stampa griglia principale
+    let testo = "";
+    for (let numero of numeri) {
+      testo += numero + " ";
+    }
+    document.getElementById("griglia").innerHTML = testo;
+
+    // mostra media, massimo e minimo
+    document.getElementById("info").innerHTML =
+      "Media: " + media.toFixed(2) + "<br>" +
+      "Massimo: " + max + "<br>" +
+      "Minimo: " + min;
+
+    // stampa numeri pari sopra 50
+    let testoPari = "";
+    for (let p of pariMaggiori) {
+      testoPari += p + " ";
+    }
+    document.getElementById("grigliaPari").innerHTML = testoPari;
+  </script>
+
+</body>
+</html>
