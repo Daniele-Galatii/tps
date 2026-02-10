@@ -33,36 +33,3 @@
 
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Sender (URL Params)</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="container">
-        <h2>Pagina Sender</h2>
-
-        <label>Parametro 1</label>
-        <input type="text" id="param1">
-
-        <label>Parametro 2</label>
-        <input type="text" id="param2">
-
-        <button onclick="inviaDati()"> Invia al Receiver </button>
-    </div>
-
-    <script>
-        function inviaDati() {
-            let p1 = document.getElementById("param1").value;
-            let p2 = document.getElementById("param2").value;
-
-            window.location.href = "receiver.html?p1=" + encodeURIComponent(p1) + "&p2=" + encodeURIComponent(p2);
-        }
-    </script>
-
-</body>
-</html>
