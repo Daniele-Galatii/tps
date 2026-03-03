@@ -71,4 +71,16 @@ footer {
     .hamburger {
         display: none;
     }
+
+
+
+    
+}
+body.dark {
+    background-color: #111;
+    color: white;
+}
+
+body.dark header {
+    background-color: #000;
 }
