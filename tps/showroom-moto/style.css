@@ -567,3 +567,59 @@ input:focus, select:focus{
   }
   .nav-links.open{ display:flex; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIX overlay "Dettagli" che resta visibile */
+.card::before,
+.card::after,
+.bike-card::before,
+.bike-card::after,
+.product-card::before,
+.product-card::after,
+.moto-card::before,
+.moto-card::after {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* se invece l'overlay è un div vero e proprio */
+.overlay,
+.img-overlay,
+.image-overlay,
+.card-overlay {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* lo facciamo comparire solo in hover/focus (desktop) */
+.card:hover::before,
+.card:hover::after,
+.bike-card:hover::before,
+.bike-card:hover::after,
+.product-card:hover::before,
+.product-card:hover::after,
+.moto-card:hover::before,
+.moto-card:hover::after {
+  opacity: 1 !important;
+}
+
+.card:hover .overlay,
+.card:hover .img-overlay,
+.card:hover .image-overlay,
+.card:hover .card-overlay,
+.card:focus-within .overlay,
+.card:focus-within .img-overlay,
+.card:focus-within .image-overlay,
+.card:focus-within .card-overlay {
+  opacity: 1 !important;
+}
