@@ -2,13 +2,13 @@
   const bikes = [
     {
       id: "ktm",
-      name: "KTM 690 SMC R",
+      name: "KTM SX 125",
       brand: "KTM",
-      category: "naked",
-      year: 2020,
-      cc: 690,
-      hp: 74,
-      price: 10990,
+      category: "motard",
+      year: 2018,
+      cc: 125,
+      hp: 38,
+      price: 11990,
       img: "assets/ktm.JPG",
       desc: "Motard stradale leggera e cattiva. Agile, pronta e super divertente in città e tra le curve."
     },
