@@ -1,45 +1,100 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-page="home">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Moto</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Showroom Moto</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">🏍 Showroom Moto</div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Vai alla Home">
+        <span class="brand-icon" aria-hidden="true">🏍️</span>
+        <span class="brand-text">Showroom Moto</span>
+      </a>
 
-        <button class="hamburger" aria-label="Apri menu">
-            ☰
+      <nav class="nav" aria-label="Navigazione principale">
+        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="burger" aria-hidden="true"></span>
         </button>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="catalogo.html">Catalogo</a></li>
-            <li><a href="preferiti.html">Preferiti</a></li>
-        </ul>
+        <div id="navLinks" class="nav-links">
+          <a class="nav-link is-active" href="index.html">Home</a>
+          <a class="nav-link" href="catalogo.html">Catalogo</a>
+          <a class="nav-link" href="preferiti.html">Preferiti <span class="badge" id="favBadge">0</span></a>
+        </div>
+      </nav>
 
-        <button id="themeToggle" aria-label="Cambia tema">
-            🌙
-        </button>
-    </nav>
-</header>
+      <button class="theme-toggle" type="button" id="themeBtn" aria-label="Cambia tema">
+        <span class="theme-dot" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
 
-<main>
+  <main id="contenuto" class="site-main">
     <section class="hero">
-        <h1>Benvenuto nello Showroom Moto</h1>
-        <p>Scopri le migliori moto sportive, naked e touring.</p>
-        <a href="catalogo.html" class="btn-primary">Vai al Catalogo</a>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Benvenuto nello Showroom Moto</h1>
+          <p>Catalogo interattivo con filtri, modale dettagli e preferiti salvati. Tutto client-side.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="catalogo.html">Vai al Catalogo</a>
+            <a class="btn ghost" href="preferiti.html">Vedi Preferiti</a>
+          </div>
+
+          <ul class="hero-pills" aria-label="Funzioni principali">
+            <li>Ricerca e filtri</li>
+            <li>Ordinamento</li>
+            <li>Preferiti</li>
+            <li>Tema dark</li>
+          </ul>
+        </div>
+
+        <div class="hero-card" aria-label="Anteprima vetrina">
+          <div class="hero-card-top">
+            <span class="chip">Nuove</span>
+            <span class="chip soft">Top scelte</span>
+          </div>
+          <div class="hero-preview" id="homePreview" aria-live="polite"></div>
+          <p class="muted small">Suggerimenti veloci: clicca “Dettagli” nel catalogo per aprire la modale.</p>
+        </div>
+      </div>
     </section>
-</main>
 
-<footer>
-    <p>© 2026 Showroom Moto - Progetto TPS</p>
-</footer>
+    <section class="wrap section">
+      <header class="section-head">
+        <h2>Come funziona</h2>
+        <p class="muted">Tutto senza API: dati in JavaScript, UI aggiornata dinamicamente.</p>
+      </header>
 
-<script src="app.js"></script>
+      <div class="grid-3">
+        <article class="info-card">
+          <h3>Catalogo</h3>
+          <p>Ricerca, filtro categoria e ordinamento per nome/prezzo/anno.</p>
+        </article>
+        <article class="info-card">
+          <h3>Dettagli</h3>
+          <p>Modale con chiusura ESC e click fuori. Focus visibile.</p>
+        </article>
+        <article class="info-card">
+          <h3>Preferiti</h3>
+          <p>Salvati in localStorage. Badge aggiornato in navbar.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Showroom Moto - Progetto TPS</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
