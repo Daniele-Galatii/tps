@@ -14,27 +14,27 @@
     },
     {
       id: "bmw",
-      name: "BMW R 1250 GS",
+      name: "BMW S 1000RR",
       brand: "BMW",
-      category: "touring",
-      year: 2021,
-      cc: 1254,
-      hp: 136,
+      category: "sportiva",
+      year: 2022,
+      cc: 999,
+      hp: 210,
       price: 17990,
       img: "assets/bmw.JPG",
-      desc: "La classica adventure per viaggiare ovunque. Comoda, coppiosa e stabile anche a pieno carico."
+      desc: "La BMW S 1000 RR è la super sportiva per eccellenza: una fusione di potenza bruta e tecnologia millimetrica."
     },
     {
       id: "panigale",
-      name: "Ducati Panigale V2",
+      name: "Ducati Panigale V4s",
       brand: "Ducati",
-      category: "sport",
+      category: "sportiva",
       year: 2022,
-      cc: 955,
-      hp: 155,
-      price: 19990,
+      cc: 1103,
+      hp: 214,
+      price: 29990,
       img: "assets/panigale.JPG",
-      desc: "Sportiva pura: ciclistica precisa e motore esplosivo. Perfetta per chi vuole sensazioni da pista."
+      desc: "Sportiva pura: ciclistica precisa e motore esplosivo. Perfetta per chi vuole sensazioni da vera pista."
     },
     {
       id: "r1",
@@ -50,27 +50,27 @@
     },
     {
       id: "tm",
-      name: "TM EN 300 2T",
+      name: "TM SMR 125",
       brand: "TM",
-      category: "offroad",
-      year: 2021,
-      cc: 300,
-      hp: 52,
-      price: 12490,
+      category: "motard",
+      year: 2022,
+      cc: 125,
+      hp: 35,
+      price: 9849,
       img: "assets/tm.JPG",
-      desc: "Enduro 2T reattiva e cattiva. Tanta coppia e leggerezza: fatta per i boschi e il tecnico."
+      desc: "Motard 2T reattiva e cattiva. Tanta coppia e leggerezza: ottima per chi ama le curve."
     },
     {
       id: "yz",
-      name: "Yamaha YZ 250F",
+      name: "Yamaha YZ 125",
       brand: "Yamaha",
-      category: "offroad",
-      year: 2019,
-      cc: 250,
-      hp: 41,
-      price: 8490,
+      category: "motard",
+      year: 2025,
+      cc: 125,
+      hp: 33,
+      price: 9890,
       img: "assets/yz.JPG",
-      desc: "Motocross 4T equilibrata e affidabile. Perfetta per allenarsi e girare in pista."
+      desc: "La YZ 125 è l'icona dei due tempi, celebre per la sua estrema maneggevolezza e un rapporto peso-potenza che la rende ottima in qualsiasi situazione"
     }
   ];
 
