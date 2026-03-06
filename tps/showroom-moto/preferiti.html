@@ -2,66 +2,70 @@
 <html lang="it" data-page="preferiti">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Preferiti - Showroom Moto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preferiti | Showroom Moto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+  <a class="skip-link" href="#mainContent">Salta al contenuto</a>
 
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Vai alla Home">
-        <span class="brand-icon" aria-hidden="true">🏍️</span>
-        <span class="brand-text">Showroom Moto</span>
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="Vai alla home">
+        <span class="logo-mark">🏍</span>
+        <span>Showroom Moto</span>
       </a>
 
-      <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
-          <span class="burger" aria-hidden="true"></span>
-        </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <div id="navLinks" class="nav-links">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="catalogo.html">Catalogo</a>
-          <a class="nav-link is-active" href="preferiti.html">Preferiti <span class="badge" id="favBadge">0</span></a>
-        </div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="preferiti.html" class="active">Preferiti <span id="favCount" class="count-badge">0</span></a>
       </nav>
 
-      <button class="theme-toggle" type="button" id="themeBtn" aria-label="Cambia tema">
-        <span class="theme-dot" aria-hidden="true"></span>
-      </button>
+      <button id="themeBtn" class="theme-btn" aria-label="Cambia tema">◐</button>
     </div>
   </header>
 
-  <main id="contenuto" class="site-main">
-    <section class="wrap section">
-      <header class="section-head">
-        <h1>Preferiti</h1>
-        <p class="muted">Salvati in localStorage. Puoi rimuoverli quando vuoi.</p>
-      </header>
+  <main id="mainContent">
+    <section class="catalog-hero">
+      <div class="container">
+        <p class="eyebrow">Salvati localmente</p>
+        <h1>Le tue moto preferite</h1>
+        <p class="hero-desc-small">Qui trovi i modelli che hai aggiunto ai preferiti.</p>
+      </div>
+    </section>
 
-      <section class="results-head" aria-label="Controlli preferiti">
-        <p class="muted" id="favInfo">0 preferiti</p>
-        <button class="btn ghost" type="button" id="clearFavBtn">Svuota</button>
-      </section>
+    <section class="catalog-grid-section">
+      <div class="container">
+        <div class="favorites-topbar">
+          <p id="favoritesInfo">0 preferiti</p>
+          <button id="clearFavoritesBtn" class="btn btn-secondary" type="button">Svuota tutto</button>
+        </div>
 
-      <section class="cards-grid" id="favGrid" aria-label="Lista preferiti"></section>
+        <div id="favoritesGrid" class="catalog-grid"></div>
 
-      <div class="empty" id="emptyFav" hidden>
-        <p>Nessun preferito al momento.</p>
-        <a class="btn primary" href="catalogo.html">Vai al catalogo</a>
+        <div id="emptyState" class="empty-state hidden">
+          <h2>Nessun preferito salvato</h2>
+          <p>Aggiungi qualche moto dal catalogo per vederla qui.</p>
+          <a href="catalogo.html" class="btn btn-primary">Vai al catalogo</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
+    <div class="container footer-inner">
       <p>© 2026 Showroom Moto - Progetto TPS</p>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>
