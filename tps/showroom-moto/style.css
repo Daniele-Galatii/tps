@@ -193,45 +193,32 @@ select {
   border-radius: 999px;
 }
 
-.hero {
-  padding: 56px 0 34px;
+/* HOME NUOVA */
+.showroom-hero {
+  padding: 54px 0 30px;
 }
 
-.hero-grid {
+.showroom-hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 34px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
   align-items: center;
 }
 
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--accent-2);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.hero-text h1 {
+.showroom-copy h1 {
   margin: 0;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  line-height: 0.95;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.98;
   letter-spacing: -0.03em;
+  max-width: 760px;
 }
 
-.hero-desc {
-  margin: 20px 0 0;
+.showroom-lead {
+  margin: 22px 0 0;
+  max-width: 680px;
   color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.65;
-  max-width: 650px;
-}
-
-.hero-desc-small {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 1rem;
+  line-height: 1.75;
+  font-size: 1.04rem;
 }
 
 .hero-actions {
@@ -271,116 +258,82 @@ select {
   background: rgba(255, 255, 255, 0.04);
 }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 30px;
+.showroom-stage {
+  display: flex;
+  justify-content: center;
 }
 
-.stat-card {
-  padding: 18px;
-  border-radius: 20px;
-  background: var(--panel);
+.stage-main {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--card);
   border: 1px solid var(--panel-border);
   box-shadow: var(--shadow);
 }
 
-.stat-number {
-  display: block;
-  font-size: 1.55rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.stat-label {
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.hero-visual {
-  display: grid;
-  gap: 16px;
-}
-
-.hero-main-card {
-  position: relative;
-  border-radius: 28px;
-  overflow: hidden;
-  min-height: 390px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-}
-
-.hero-main-card img {
+.stage-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.hero-overlay {
+.stage-caption {
   position: absolute;
   left: 18px;
   right: 18px;
   bottom: 18px;
-  padding: 18px;
+  padding: 18px 20px;
   border-radius: 22px;
-  background: rgba(11, 13, 20, 0.62);
+  background: rgba(11, 13, 20, 0.64);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hero-overlay h3 {
-  margin: 10px 0 4px;
-  font-size: 1.4rem;
-}
-
-.hero-overlay p {
-  margin: 0;
-  color: #d7dcf0;
-}
-
-.hero-chip {
+.stage-label {
   display: inline-flex;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(143, 102, 255, 0.24);
+  background: rgba(143, 102, 255, 0.22);
   color: white;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
-.hero-side-stack {
-  display: grid;
-  gap: 16px;
+.stage-caption h3 {
+  margin: 0 0 6px;
+  font-size: 1.45rem;
 }
 
-.mini-bike-card {
+.stage-caption p {
+  margin: 0;
+  color: #d9def2;
+}
+
+.brands-section {
+  padding: 10px 0 22px;
+}
+
+.brands-strip {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
+}
+
+.brands-strip span {
+  display: flex;
   align-items: center;
-  padding: 14px;
-  border-radius: 22px;
+  justify-content: center;
+  min-height: 72px;
+  border-radius: 20px;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   box-shadow: var(--shadow);
-}
-
-.mini-bike-card img {
-  width: 110px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.mini-bike-card h4 {
-  margin: 0 0 6px;
-  font-size: 1rem;
-}
-
-.mini-bike-card p {
-  margin: 0;
-  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .home-section,
@@ -399,13 +352,22 @@ select {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
-.features-grid {
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.feature-card {
+.service-card {
   padding: 24px;
   border-radius: 24px;
   background: var(--panel);
@@ -413,16 +375,73 @@ select {
   box-shadow: var(--shadow);
 }
 
-.feature-card h3 {
+.service-card h3 {
   margin: 0 0 10px;
 }
 
-.feature-card p {
+.service-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
+.alt-section {
+  padding-top: 10px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.showcase-text h2 {
+  margin: 8px 0 14px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.showcase-text p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.showcase-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.mini-showcase-card {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.mini-showcase-card img {
+  width: 130px;
+  height: 94px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.mini-showcase-card h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.mini-showcase-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* CATALOGO */
 .catalog-hero {
   padding: 42px 0 10px;
 }
@@ -460,11 +479,36 @@ select {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 [data-theme="light"] .field input,
 [data-theme="light"] .field select {
   background: white;
+}
+
+.field select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 14px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 38px;
+}
+
+.field select option {
+  background: #161a28;
+  color: #f5f7ff;
+}
+
+[data-theme="light"] .field select option {
+  background: #ffffff;
+  color: #161a28;
 }
 
 .toolbar-buttons {
@@ -586,6 +630,7 @@ select {
   flex: 1;
 }
 
+/* FORM */
 .form-section .container {
   display: block;
 }
@@ -617,6 +662,7 @@ select {
   margin-top: 18px;
 }
 
+/* FOOTER */
 .site-footer {
   border-top: 1px solid var(--panel-border);
   margin-top: 34px;
@@ -630,6 +676,7 @@ select {
   color: var(--muted);
 }
 
+/* TOAST */
 .toast {
   position: fixed;
   left: 50%;
@@ -651,6 +698,7 @@ select {
   transform: translateX(-50%) translateY(0);
 }
 
+/* MODALE */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -737,6 +785,7 @@ select {
   margin-bottom: 6px;
 }
 
+/* EMPTY */
 .hidden {
   display: none !important;
 }
@@ -753,18 +802,22 @@ select {
   margin-top: 0;
 }
 
+/* FOCUS */
 :focus-visible {
   outline: 3px solid rgba(143, 102, 255, 0.5);
   outline-offset: 2px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .catalog-grid,
-  .features-grid {
+  .services-grid,
+  .brands-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-grid,
+  .showroom-hero-grid,
+  .showcase-grid,
   .modal-grid {
     grid-template-columns: 1fr;
   }
@@ -772,8 +825,7 @@ select {
 
 @media (max-width: 900px) {
   .catalog-toolbar,
-  .form-grid,
-  .hero-stats {
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -807,16 +859,26 @@ select {
   }
 
   .catalog-grid,
-  .features-grid {
+  .services-grid,
+  .brands-strip {
     grid-template-columns: 1fr;
   }
 
-  .hero-main-card {
-    min-height: 300px;
+  .showroom-copy h1 {
+    font-size: 2.5rem;
   }
 
-  .mini-bike-card {
-    grid-template-columns: 90px 1fr;
+  .mini-showcase-card {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .mini-showcase-card img {
+    width: 100px;
+    height: 78px;
+  }
+
+  .stage-main {
+    min-height: 320px;
   }
 
   .bike-actions {
@@ -828,9 +890,5 @@ select {
     flex-direction: column;
     align-items: start;
     gap: 12px;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
   }
 }
