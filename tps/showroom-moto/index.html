@@ -2,98 +2,137 @@
 <html lang="it" data-page="home">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Showroom Moto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+  <a class="skip-link" href="#mainContent">Salta al contenuto</a>
 
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Vai alla Home">
-        <span class="brand-icon" aria-hidden="true">🏍️</span>
-        <span class="brand-text">Showroom Moto</span>
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo" aria-label="Vai alla home">
+        <span class="logo-mark">🏍</span>
+        <span>Showroom Moto</span>
       </a>
 
-      <nav class="nav" aria-label="Navigazione principale">
-        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
-          <span class="burger" aria-hidden="true"></span>
-        </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <div id="navLinks" class="nav-links">
-          <a class="nav-link is-active" href="index.html">Home</a>
-          <a class="nav-link" href="catalogo.html">Catalogo</a>
-          <a class="nav-link" href="preferiti.html">Preferiti <span class="badge" id="favBadge">0</span></a>
-        </div>
+      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
+        <a href="index.html" class="active">Home</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="preferiti.html">Preferiti <span id="favCount" class="count-badge">0</span></a>
       </nav>
 
-      <button class="theme-toggle" type="button" id="themeBtn" aria-label="Cambia tema">
-        <span class="theme-dot" aria-hidden="true"></span>
-      </button>
+      <button id="themeBtn" class="theme-btn" aria-label="Cambia tema">◐</button>
     </div>
   </header>
 
-  <main id="contenuto" class="site-main">
+  <main id="mainContent">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <h1>Benvenuto nello Showroom Moto</h1>
-          <p>Catalogo interattivo con filtri, modale dettagli e preferiti salvati. Tutto client-side.</p>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Mini webapp interattiva</p>
+          <h1>Lo showroom moto che sembra fatto da uno che ne capisce davvero.</h1>
+          <p class="hero-desc">
+            Scopri sportive e motard selezionate, confronta i modelli, apri i dettagli e salva i tuoi preferiti.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn primary" href="catalogo.html">Vai al Catalogo</a>
-            <a class="btn ghost" href="preferiti.html">Vedi Preferiti</a>
+            <a href="catalogo.html" class="btn btn-primary">Esplora catalogo</a>
+            <a href="preferiti.html" class="btn btn-secondary">Apri preferiti</a>
           </div>
 
-          <ul class="hero-pills" aria-label="Funzioni principali">
-            <li>Ricerca e filtri</li>
-            <li>Ordinamento</li>
-            <li>Preferiti</li>
-            <li>Tema dark</li>
-          </ul>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Moto disponibili</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Categorie principali</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Client-side</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-card" aria-label="Anteprima vetrina">
-          <div class="hero-card-top">
-            <span class="chip">Nuove</span>
-            <span class="chip soft">Top scelte</span>
+        <div class="hero-visual">
+          <div class="hero-main-card">
+            <img src="assets/panigale.JPG" alt="Ducati Panigale V4s" />
+            <div class="hero-overlay">
+              <span class="hero-chip">Top pick</span>
+              <h3>Ducati Panigale V4s</h3>
+              <p>214 hp · 1103 cc · 2022</p>
+            </div>
           </div>
-          <div class="hero-preview" id="homePreview" aria-live="polite"></div>
-          <p class="muted small">Suggerimenti veloci: clicca “Dettagli” nel catalogo per aprire la modale.</p>
+
+          <div class="hero-side-stack">
+            <div class="mini-bike-card">
+              <img src="assets/ktm.JPG" alt="KTM SX 125" />
+              <div>
+                <h4>KTM SX 125</h4>
+                <p>Motard · 38 hp</p>
+              </div>
+            </div>
+
+            <div class="mini-bike-card">
+              <img src="assets/bmw.JPG" alt="BMW S 1000RR" />
+              <div>
+                <h4>BMW S 1000RR</h4>
+                <p>Sportiva · 210 hp</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="wrap section">
-      <header class="section-head">
-        <h2>Come funziona</h2>
-        <p class="muted">Tutto senza API: dati in JavaScript, UI aggiornata dinamicamente.</p>
-      </header>
+    <section class="home-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Perché questo progetto spacca</p>
+          <h2>Grafica pulita, funzioni vere, esperienza completa</h2>
+        </div>
 
-      <div class="grid-3">
-        <article class="info-card">
-          <h3>Catalogo</h3>
-          <p>Ricerca, filtro categoria e ordinamento per nome/prezzo/anno.</p>
-        </article>
-        <article class="info-card">
-          <h3>Dettagli</h3>
-          <p>Modale con chiusura ESC e click fuori. Focus visibile.</p>
-        </article>
-        <article class="info-card">
-          <h3>Preferiti</h3>
-          <p>Salvati in localStorage. Badge aggiornato in navbar.</p>
-        </article>
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3>Ricerca e filtri</h3>
+            <p>Trovi subito la moto giusta per nome, categoria o fascia.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Modale dettagli</h3>
+            <p>Apri le schede in overlay con descrizioni, dati e immagini.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Preferiti salvati</h3>
+            <p>I modelli scelti restano memorizzati anche ricaricando il sito.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Tema persistente</h3>
+            <p>Dark e light mode con salvataggio automatico nel browser.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
+    <div class="container footer-inner">
       <p>© 2026 Showroom Moto - Progetto TPS</p>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>
