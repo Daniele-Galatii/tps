@@ -33,63 +33,43 @@
   </header>
 
   <main id="mainContent">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">Mini webapp interattiva</p>
-          <h1>Lo showroom moto che sembra fatto da uno che ne capisce davvero.</h1>
-          <p class="hero-desc">
-            Scopri sportive e motard selezionate, confronta i modelli, apri i dettagli e salva i tuoi preferiti.
+    <section class="showroom-hero">
+      <div class="container showroom-hero-grid">
+        <div class="showroom-copy">
+          <p class="eyebrow">Selezione digitale</p>
+          <h1>Un’esperienza showroom pensata per chi cerca il modello giusto.</h1>
+          <p class="showroom-lead">
+            Esplora una selezione di moto ad alte prestazioni, confronta caratteristiche tecniche,
+            apri i dettagli dei modelli e salva i tuoi preferiti in un’interfaccia moderna e ordinata.
           </p>
 
           <div class="hero-actions">
-            <a href="catalogo.html" class="btn btn-primary">Esplora catalogo</a>
-            <a href="preferiti.html" class="btn btn-secondary">Apri preferiti</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-card">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Moto disponibili</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Categorie principali</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Client-side</span>
-            </div>
+            <a href="catalogo.html" class="btn btn-primary">Scopri il catalogo</a>
+            <a href="preferiti.html" class="btn btn-secondary">Apri i preferiti</a>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-main-card">
-            <img src="assets/panigale.JPG" alt="Ducati Panigale V4s" />
-            <div class="hero-overlay">
-              <span class="hero-chip">Top pick</span>
+        <div class="showroom-stage">
+          <div class="stage-main">
+            <img src="assets/panigale.JPG" alt="Ducati Panigale V4s esposta nello showroom" />
+            <div class="stage-caption">
+              <span class="stage-label">In evidenza</span>
               <h3>Ducati Panigale V4s</h3>
-              <p>214 hp · 1103 cc · 2022</p>
+              <p>Linea aggressiva, componentistica premium e prestazioni da riferimento.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="hero-side-stack">
-            <div class="mini-bike-card">
-              <img src="assets/ktm.JPG" alt="KTM SX 125" />
-              <div>
-                <h4>KTM SX 125</h4>
-                <p>Motard · 38 hp</p>
-              </div>
-            </div>
-
-            <div class="mini-bike-card">
-              <img src="assets/bmw.JPG" alt="BMW S 1000RR" />
-              <div>
-                <h4>BMW S 1000RR</h4>
-                <p>Sportiva · 210 hp</p>
-              </div>
-            </div>
-          </div>
+    <section class="brands-section">
+      <div class="container">
+        <div class="brands-strip">
+          <span>KTM</span>
+          <span>BMW</span>
+          <span>Ducati</span>
+          <span>Yamaha</span>
+          <span>TM</span>
         </div>
       </div>
     </section>
@@ -97,30 +77,64 @@
     <section class="home-section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Perché questo progetto spacca</p>
-          <h2>Grafica pulita, funzioni vere, esperienza completa</h2>
+          <p class="eyebrow">Servizi showroom</p>
+          <h2>Consultazione, confronto e selezione</h2>
         </div>
 
-        <div class="features-grid">
-          <article class="feature-card">
-            <h3>Ricerca e filtri</h3>
-            <p>Trovi subito la moto giusta per nome, categoria o fascia.</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Catalogo dinamico</h3>
+            <p>Ricerca rapida, categorie e ordinamento per visualizzare i modelli in modo immediato.</p>
           </article>
 
-          <article class="feature-card">
-            <h3>Modale dettagli</h3>
-            <p>Apri le schede in overlay con descrizioni, dati e immagini.</p>
+          <article class="service-card">
+            <h3>Schede dettagliate</h3>
+            <p>Ogni moto può essere aperta in modale con informazioni tecniche, descrizione e immagine.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="service-card">
             <h3>Preferiti salvati</h3>
-            <p>I modelli scelti restano memorizzati anche ricaricando il sito.</p>
+            <p>I modelli selezionati restano memorizzati localmente per essere consultati in seguito.</p>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="feature-card">
-            <h3>Tema persistente</h3>
-            <p>Dark e light mode con salvataggio automatico nel browser.</p>
-          </article>
+    <section class="home-section alt-section">
+      <div class="container showcase-grid">
+        <div class="showcase-text">
+          <p class="eyebrow">Navigazione intuitiva</p>
+          <h2>Un’interfaccia pulita, pensata per valorizzare i modelli.</h2>
+          <p>
+            La struttura del sito è composta da home, catalogo e area preferiti, con tema persistente,
+            navigazione responsive e componenti interattivi.
+          </p>
+        </div>
+
+        <div class="showcase-cards">
+          <div class="mini-showcase-card">
+            <img src="assets/ktm.JPG" alt="KTM SX 125" />
+            <div>
+              <h4>KTM SX 125</h4>
+              <p>Motard · 125 cc · 38 hp</p>
+            </div>
+          </div>
+
+          <div class="mini-showcase-card">
+            <img src="assets/bmw.JPG" alt="BMW S 1000RR" />
+            <div>
+              <h4>BMW S 1000RR</h4>
+              <p>Sportiva · 999 cc · 210 hp</p>
+            </div>
+          </div>
+
+          <div class="mini-showcase-card">
+            <img src="assets/r1.JPG" alt="Yamaha YZF-R1" />
+            <div>
+              <h4>Yamaha YZF-R1</h4>
+              <p>Sport · 998 cc · 200 hp</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
