@@ -388,7 +388,6 @@ function getFilteredBikes() {
 function renderCatalog() {
   const grid = qs("#catalogGrid");
   const resultsInfo = qs("#resultsInfo");
-  const loadMoreBtn = qs("#loadMoreBtn");
 
   if (!grid) return;
 
@@ -566,7 +565,7 @@ function initCatalogEvents() {
 
   if (sortSelect) {
     sortSelect.addEventListener("change", () => {
-      currentVisible = 6;
+      currentVisible = 100;
       renderCatalog();
     });
   }
@@ -576,16 +575,9 @@ function initCatalogEvents() {
       if (searchInput) searchInput.value = "";
       if (categoryFilter) categoryFilter.value = "all";
       if (sortSelect) sortSelect.value = "default";
-      currentVisible = 6;
+      currentVisible = 100;
       renderCatalog();
       showToast("Filtri resettati");
-    });
-  }
-
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      currentVisible += 3;
-      renderCatalog();
     });
   }
 }
