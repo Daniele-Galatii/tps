@@ -1661,3 +1661,14 @@ body {
 [data-theme="light"] .dealer-feature-info span {
   color: #c1121f;
 }
+
+
+
+.count-badge {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.count-badge.bump {
+  transform: scale(1.35);
+  background: #ff2a2a;
+}
