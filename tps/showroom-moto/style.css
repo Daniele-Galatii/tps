@@ -1401,3 +1401,171 @@ body {
     display: none;
   }
 }
+
+
+
+
+/* === UPGRADE FINALE HOME / NAV / PREFERITI === */
+
+.logo span:last-child,
+.logo {
+  white-space: nowrap;
+}
+
+.logo::after {
+  content: "Garage";
+}
+
+.site-footer p {
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.garage-experience {
+  padding: 46px 0 70px;
+  background:
+    linear-gradient(135deg, rgba(215, 25, 32, 0.14), transparent 45%),
+    rgba(0, 0, 0, 0.18);
+  border-top: 1px solid rgba(215, 25, 32, 0.22);
+}
+
+.garage-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.garage-text {
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(18, 18, 20, 0.75);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.garage-text h2 {
+  margin: 8px 0 14px;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  line-height: 1;
+}
+
+.garage-text p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.garage-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.garage-item {
+  padding: 24px;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(215, 25, 32, 0.15), rgba(255, 255, 255, 0.035));
+  border: 1px solid rgba(215, 25, 32, 0.25);
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+}
+
+.garage-item:hover {
+  transform: translateX(8px);
+  border-color: rgba(215, 25, 32, 0.55);
+}
+
+.garage-item strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.garage-item span {
+  color: var(--muted);
+}
+
+/* Preferiti più premium */
+.favorites-hero {
+  padding: 42px 0 28px;
+}
+
+.favorites-hero-box {
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.favorites-hero-box > div:first-child {
+  padding: 34px;
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, rgba(215, 25, 32, 0.16), transparent 48%),
+    rgba(18, 18, 20, 0.84);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.favorites-hero h1 {
+  margin: 8px 0 14px;
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.favorites-hero p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.favorites-summary {
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(215, 25, 32, 0.28), transparent 45%),
+    var(--card);
+  border: 1px solid rgba(215, 25, 32, 0.28);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.favorites-summary strong {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.favorites-summary span {
+  color: var(--muted);
+}
+
+/* nasconde la vecchia topbar vuota se resta senza testo utile */
+.favorites-topbar {
+  margin-top: 4px;
+}
+
+/* navbar ancora più garage */
+.site-header {
+  background:
+    linear-gradient(90deg, rgba(215, 25, 32, 0.10), rgba(8, 8, 10, 0.92));
+}
+
+.nav-links a.active {
+  box-shadow: 0 0 18px rgba(215, 25, 32, 0.22);
+}
+
+@media (max-width: 900px) {
+  .garage-grid,
+  .favorites-hero-box {
+    grid-template-columns: 1fr;
+  }
+
+  .garage-item:hover {
+    transform: translateY(-4px);
+  }
+}
