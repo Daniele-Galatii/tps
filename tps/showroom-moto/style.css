@@ -892,3 +892,366 @@ select {
     gap: 12px;
   }
 }
+
+
+/* === OVERRIDE GRAFICA NERO/ROSSO + HOME CONCESSIONARIO === */
+
+:root {
+  --bg: #0a0a0b;
+  --bg-soft: #151515;
+  --panel: rgba(24, 24, 26, 0.88);
+  --panel-border: rgba(255, 255, 255, 0.10);
+  --card: rgba(18, 18, 20, 0.96);
+  --text: #f3f3f3;
+  --muted: #b5b5b5;
+  --accent: #d71920;
+  --accent-2: #ff3b3b;
+  --danger: #ff4d5e;
+  --success: #20c997;
+  --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] {
+  --bg: #f4f4f4;
+  --bg-soft: #ffffff;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(0, 0, 0, 0.10);
+  --card: #ffffff;
+  --text: #151515;
+  --muted: #666;
+  --accent: #c1121f;
+  --accent-2: #e5383b;
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(215, 25, 32, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 25%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 12px 30px rgba(215, 25, 32, 0.35);
+}
+
+.count-badge {
+  background: rgba(215, 25, 32, 0.25);
+  border-color: rgba(215, 25, 32, 0.5);
+}
+
+.eyebrow {
+  color: var(--accent-2);
+}
+
+/* HOME: nuovo stile concessionario */
+.dealer-hero {
+  padding: 60px 0 40px;
+}
+
+.dealer-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.dealer-label {
+  display: inline-block;
+  margin: 0 0 14px;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.dealer-copy h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  max-width: 760px;
+}
+
+.dealer-lead {
+  margin: 22px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  max-width: 650px;
+}
+
+.dealer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.dealer-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.dealer-points div {
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.dealer-points strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.dealer-points span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.dealer-feature {
+  position: relative;
+  min-height: 500px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.dealer-feature img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+.dealer-feature-info {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(8, 8, 10, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+}
+
+.dealer-feature-info span {
+  display: inline-block;
+  color: #ffb4b4;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.dealer-feature-info h2 {
+  margin: 8px 0 6px;
+  font-size: 1.6rem;
+}
+
+.dealer-feature-info p {
+  margin: 0;
+  color: #e5e5e5;
+}
+
+.dealer-showcase {
+  padding: 35px 0 50px;
+}
+
+.dealer-section-title {
+  margin-bottom: 22px;
+}
+
+.dealer-section-title span {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.dealer-section-title h2 {
+  margin: 8px 0 8px;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.dealer-section-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.featured-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+}
+
+.featured-bike {
+  overflow: hidden;
+  border-radius: 26px;
+  background: var(--card);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+}
+
+.featured-bike:hover {
+  transform: translateY(-5px);
+}
+
+.featured-bike img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.featured-bike.large img {
+  height: 340px;
+}
+
+.featured-bike div {
+  padding: 18px;
+}
+
+.bike-type {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(215, 25, 32, 0.20);
+  color: #ffb4b4;
+  border: 1px solid rgba(215, 25, 32, 0.38);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.featured-bike h3 {
+  margin: 0 0 8px;
+}
+
+.featured-bike p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent-2);
+  font-weight: 800;
+}
+
+.dealer-info {
+  padding: 30px 0 60px;
+}
+
+.dealer-info-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.dealer-info h2 {
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.dealer-info-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.dealer-info-cards article {
+  padding: 22px;
+  border-radius: 22px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+}
+
+.dealer-info-cards h3 {
+  margin: 0 0 8px;
+}
+
+.dealer-info-cards p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* catalogo/preferiti più coerenti col rosso */
+.bike-badge {
+  background: rgba(215, 25, 32, 0.78);
+}
+
+.bike-card:hover {
+  border-color: rgba(215, 25, 32, 0.45);
+}
+
+.spec-pill {
+  background: rgba(215, 25, 32, 0.08);
+}
+
+.field select option {
+  background: #151515;
+  color: #f3f3f3;
+}
+
+[data-theme="light"] .field select option {
+  background: #ffffff;
+  color: #151515;
+}
+
+/* responsive nuova home */
+@media (max-width: 1100px) {
+  .dealer-hero-grid,
+  .dealer-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-bike.large {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dealer-hero {
+    padding-top: 34px;
+  }
+
+  .dealer-points {
+    grid-template-columns: 1fr;
+  }
+
+  .dealer-feature,
+  .dealer-feature img {
+    min-height: 340px;
+  }
+
+  .featured-row {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-bike.large img,
+  .featured-bike img {
+    height: 240px;
+  }
+}
