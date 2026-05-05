@@ -76,7 +76,7 @@ const bikes = [
   id: "streetfighter",
   name: "Ducati Streetfighter V4",
   brand: "Ducati",
-  category: "sportiva",
+  category: "naked",
   year: 2022,
   cc: 1103,
   hp: 208,
