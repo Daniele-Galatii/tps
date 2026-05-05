@@ -71,79 +71,78 @@ const bikes = [
     img: "assets/yz.JPG",
     desc: "La YZ 125 è l'icona dei due tempi, celebre per la sua estrema maneggevolezza e un rapporto peso-potenza che la rende ottima in qualsiasi situazione."
   },
-
   {
-  id: "streetfighter",
-  name: "Ducati Streetfighter V4",
-  brand: "Ducati",
-  category: "naked",
-  year: 2022,
-  cc: 1103,
-  hp: 208,
-  price: 23990,
-  img: "assets/streetfighter.JPG",
-  desc: "Naked estrema derivata dalla Panigale, con motore potente, elettronica avanzata e carattere aggressivo."
-},
-{
-  id: "mt09",
-  name: "Yamaha MT-09",
-  brand: "Yamaha",
-  category: "naked",
-  year: 2021,
-  cc: 890,
-  hp: 119,
-  price: 9490,
-  img: "assets/mt09.JPG",
-  desc: "Naked leggera e divertente, con motore tre cilindri pieno di coppia e guida molto reattiva."
-},
-{
-  id: "husky450",
-  name: "Husqvarna FS 450",
-  brand: "Husqvarna",
-  category: "motard",
-  year: 2023,
-  cc: 450,
-  hp: 63,
-  price: 11990,
-  img: "assets/husky450.JPG",
-  desc: "Motard racing molto leggera, pensata per la pista e per chi cerca massima agilità e prestazioni."
-},
-{
-  id: "ktm1290",
-  name: "KTM 1290 Super Duke R",
-  brand: "KTM",
-  category: "naked",
-  year: 2022,
-  cc: 1301,
-  hp: 180,
-  price: 18990,
-  img: "assets/1290.JPG",
-  desc: "Maxi naked potentissima, con tanta coppia, elettronica completa e una guida aggressiva."
-},
-{
-  id: "zx636",
-  name: "Kawasaki Ninja ZX-6R 636",
-  brand: "Kawasaki",
-  category: "sportiva",
-  year: 2020,
-  cc: 636,
-  hp: 130,
-  price: 11490,
-  img: "assets/636.JPG",
-  desc: "Sportiva media molto precisa, apprezzata per il motore brillante e la ciclistica efficace."
-},
-{
-  id: "hypermotard",
-  name: "Ducati Hypermotard 950",
-  brand: "Ducati",
-  category: "motard",
-  year: 2021,
-  cc: 937,
-  hp: 114,
-  price: 13990,
-  img: "assets/hypermotard.JPG",
-  desc: "Moto alta, aggressiva e divertente, a metà tra motard e naked sportiva, perfetta per guidare forte tra le curve."
-}
+    id: "streetfighter",
+    name: "Ducati Streetfighter V4",
+    brand: "Ducati",
+    category: "naked",
+    year: 2022,
+    cc: 1103,
+    hp: 208,
+    price: 23990,
+    img: "assets/streetfighter.JPG",
+    desc: "Naked estrema derivata dalla Panigale, con motore potente, elettronica avanzata e carattere aggressivo."
+  },
+  {
+    id: "mt09",
+    name: "Yamaha MT-09",
+    brand: "Yamaha",
+    category: "naked",
+    year: 2021,
+    cc: 890,
+    hp: 119,
+    price: 9490,
+    img: "assets/mt09.JPG",
+    desc: "Naked leggera e divertente, con motore tre cilindri pieno di coppia e guida molto reattiva."
+  },
+  {
+    id: "husky450",
+    name: "Husqvarna FS 450",
+    brand: "Husqvarna",
+    category: "motard",
+    year: 2023,
+    cc: 450,
+    hp: 63,
+    price: 11990,
+    img: "assets/husky450.JPG",
+    desc: "Motard racing molto leggera, pensata per la pista e per chi cerca massima agilità e prestazioni."
+  },
+  {
+    id: "ktm1290",
+    name: "KTM 1290 Super Duke R",
+    brand: "KTM",
+    category: "naked",
+    year: 2022,
+    cc: 1301,
+    hp: 180,
+    price: 18990,
+    img: "assets/1290.JPG",
+    desc: "Maxi naked potentissima, con tanta coppia, elettronica completa e una guida aggressiva."
+  },
+  {
+    id: "zx636",
+    name: "Kawasaki Ninja ZX-6R 636",
+    brand: "Kawasaki",
+    category: "sportiva",
+    year: 2020,
+    cc: 636,
+    hp: 130,
+    price: 11490,
+    img: "assets/636.JPG",
+    desc: "Sportiva media molto precisa, apprezzata per il motore brillante e la ciclistica efficace."
+  },
+  {
+    id: "hypermotard",
+    name: "Ducati Hypermotard 950",
+    brand: "Ducati",
+    category: "motard",
+    year: 2021,
+    cc: 937,
+    hp: 114,
+    price: 13990,
+    img: "assets/hypermotard.JPG",
+    desc: "Moto alta, aggressiva e divertente, a metà tra motard e naked sportiva, perfetta per guidare forte tra le curve."
+  }
 ];
 
 const FAVORITES_KEY = "showroomMotoFavorites";
@@ -153,17 +152,18 @@ function qs(selector) {
   return document.querySelector(selector);
 }
 
-function qsa(selector) {
-  return document.querySelectorAll(selector);
-}
-
 function formatPrice(value) {
   return value.toLocaleString("it-IT") + " €";
 }
 
 function getFavorites() {
   const saved = localStorage.getItem(FAVORITES_KEY);
-  return saved ? JSON.parse(saved) : [];
+
+  try {
+    return saved ? JSON.parse(saved) : [];
+  } catch (error) {
+    return [];
+  }
 }
 
 function saveFavorites(favorites) {
@@ -218,6 +218,7 @@ function loadTheme() {
 
 function initTheme() {
   loadTheme();
+
   const btn = qs("#themeBtn");
   if (btn) {
     btn.addEventListener("click", toggleTheme);
@@ -405,17 +406,13 @@ function renderCatalog() {
   const visible = filtered.slice(0, currentVisible);
 
   grid.innerHTML = "";
+
   visible.forEach(bike => {
     grid.appendChild(createBikeCard(bike));
   });
 
   if (resultsInfo) {
     resultsInfo.textContent = `${filtered.length} risultati (mostrati ${visible.length})`;
-  }
-
-  if (loadMoreBtn) {
-    loadMoreBtn.disabled = visible.length >= filtered.length;
-    loadMoreBtn.style.opacity = visible.length >= filtered.length ? "0.5" : "1";
   }
 }
 
@@ -435,6 +432,7 @@ function renderFavorites() {
     emptyState.classList.remove("hidden");
   } else {
     emptyState.classList.add("hidden");
+
     favoriteBikes.forEach(bike => {
       grid.appendChild(createBikeCard(bike, true));
     });
@@ -530,6 +528,7 @@ function closeModal() {
 
   if (modal) modal.classList.add("hidden");
   if (backdrop) backdrop.classList.add("hidden");
+
   document.body.style.overflow = "";
 }
 
@@ -557,18 +556,17 @@ function initCatalogEvents() {
   const categoryFilter = qs("#categoryFilter");
   const sortSelect = qs("#sortSelect");
   const resetBtn = qs("#resetBtn");
-  const loadMoreBtn = qs("#loadMoreBtn");
 
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      currentVisible = 6;
+      currentVisible = 100;
       renderCatalog();
     });
   }
 
   if (categoryFilter) {
     categoryFilter.addEventListener("change", () => {
-      currentVisible = 6;
+      currentVisible = 100;
       renderCatalog();
     });
   }
@@ -585,6 +583,7 @@ function initCatalogEvents() {
       if (searchInput) searchInput.value = "";
       if (categoryFilter) categoryFilter.value = "all";
       if (sortSelect) sortSelect.value = "default";
+
       currentVisible = 100;
       renderCatalog();
       showToast("Filtri resettati");
@@ -597,6 +596,7 @@ function initForm() {
   if (!form) return;
 
   const modelInput = qs("#modelInput");
+
   bikes.forEach(bike => {
     const option = document.createElement("option");
     option.value = bike.id;
@@ -653,6 +653,7 @@ function initForm() {
 
 function initFavoritesPage() {
   const clearBtn = qs("#clearFavoritesBtn");
+
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
       saveFavorites([]);
