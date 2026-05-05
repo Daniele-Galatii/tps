@@ -39,7 +39,7 @@ const bikes = [
     id: "r1",
     name: "Yamaha YZF-R1",
     brand: "Yamaha",
-    category: "sport",
+    category: "sportiva",
     year: 2020,
     cc: 998,
     hp: 200,
