@@ -70,7 +70,7 @@ const bikes = [
     price: 9890,
     img: "assets/yz.JPG",
     desc: "La YZ 125 è l'icona dei due tempi, celebre per la sua estrema maneggevolezza e un rapporto peso-potenza che la rende ottima in qualsiasi situazione."
-  }
+  },
 
   {
   id: "streetfighter",
