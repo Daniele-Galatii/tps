@@ -32,7 +32,7 @@ const bikes = [
     cc: 1103,
     hp: 214,
     price: 29990,
-    img: "assets/panigale.JPG",
+    img: "assets/panigale1.JPG",
     desc: "Sportiva pura: ciclistica precisa e motore esplosivo. Perfetta per chi vuole sensazioni da vera pista."
   },
   {
