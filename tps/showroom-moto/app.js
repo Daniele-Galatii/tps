@@ -71,6 +71,79 @@ const bikes = [
     img: "assets/yz.JPG",
     desc: "La YZ 125 è l'icona dei due tempi, celebre per la sua estrema maneggevolezza e un rapporto peso-potenza che la rende ottima in qualsiasi situazione."
   }
+
+  {
+  id: "streetfighter",
+  name: "Ducati Streetfighter V4",
+  brand: "Ducati",
+  category: "sportiva",
+  year: 2022,
+  cc: 1103,
+  hp: 208,
+  price: 23990,
+  img: "assets/streetfighter.JPG",
+  desc: "Naked estrema derivata dalla Panigale, con motore potente, elettronica avanzata e carattere aggressivo."
+},
+{
+  id: "mt09",
+  name: "Yamaha MT-09",
+  brand: "Yamaha",
+  category: "naked",
+  year: 2021,
+  cc: 890,
+  hp: 119,
+  price: 9490,
+  img: "assets/mt09.JPG",
+  desc: "Naked leggera e divertente, con motore tre cilindri pieno di coppia e guida molto reattiva."
+},
+{
+  id: "husky450",
+  name: "Husqvarna FS 450",
+  brand: "Husqvarna",
+  category: "motard",
+  year: 2023,
+  cc: 450,
+  hp: 63,
+  price: 11990,
+  img: "assets/husky450.JPG",
+  desc: "Motard racing molto leggera, pensata per la pista e per chi cerca massima agilità e prestazioni."
+},
+{
+  id: "ktm1290",
+  name: "KTM 1290 Super Duke R",
+  brand: "KTM",
+  category: "naked",
+  year: 2022,
+  cc: 1301,
+  hp: 180,
+  price: 18990,
+  img: "assets/1290.JPG",
+  desc: "Maxi naked potentissima, con tanta coppia, elettronica completa e una guida aggressiva."
+},
+{
+  id: "zx636",
+  name: "Kawasaki Ninja ZX-6R 636",
+  brand: "Kawasaki",
+  category: "sportiva",
+  year: 2020,
+  cc: 636,
+  hp: 130,
+  price: 11490,
+  img: "assets/636.JPG",
+  desc: "Sportiva media molto precisa, apprezzata per il motore brillante e la ciclistica efficace."
+},
+{
+  id: "hypermotard",
+  name: "Ducati Hypermotard 950",
+  brand: "Ducati",
+  category: "motard",
+  year: 2021,
+  cc: 937,
+  hp: 114,
+  price: 13990,
+  img: "assets/hypermotard.JPG",
+  desc: "Moto alta, aggressiva e divertente, a metà tra motard e naked sportiva, perfetta per guidare forte tra le curve."
+}
 ];
 
 const FAVORITES_KEY = "showroomMotoFavorites";
