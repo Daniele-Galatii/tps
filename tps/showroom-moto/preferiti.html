@@ -16,30 +16,27 @@
         <span>DG Motor Showroom</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="catalogo.html">Catalogo</a>
-        <a href="preferiti.html" class="active">
+        <a href="preferiti.html" class="active" aria-label="Vai alla pagina preferiti">
           Preferiti <span id="favCount" class="count-badge">0</span>
         </a>
       </nav>
 
-      <button id="themeBtn" class="theme-btn">◐</button>
+      <button id="themeBtn" class="theme-btn" aria-label="Cambia tema">◐</button>
     </div>
   </header>
 
   <main id="mainContent">
-
-    <!-- HERO PREFERITI -->
     <section class="favorites-hero">
       <div class="container favorites-hero-box">
-
         <div>
           <span class="dealer-label">Garage personale</span>
           <h1>Le moto che hai messo da parte.</h1>
@@ -61,15 +58,12 @@
             Svuota tutto
           </button>
         </div>
-
       </div>
     </section>
 
-    <!-- GRID -->
     <section class="catalog-grid-section">
       <div class="container">
-
-        <div id="favoritesGrid" class="catalog-grid"></div>
+        <div id="favoritesGrid" class="catalog-grid" aria-live="polite"></div>
 
         <div id="emptyState" class="empty-state hidden">
           <h2>Nessun preferito salvato</h2>
@@ -78,10 +72,8 @@
             Vai al catalogo
           </a>
         </div>
-
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -90,7 +82,7 @@
     </div>
   </footer>
 
-  <div id="toast" class="toast"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>
