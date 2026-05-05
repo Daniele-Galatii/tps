@@ -1569,3 +1569,79 @@ body {
     transform: translateY(-4px);
   }
 }
+
+/* === FIX TEMA CHIARO: leggibilità home/preferiti === */
+
+[data-theme="light"] .dealer-copy,
+[data-theme="light"] .garage-text,
+[data-theme="light"] .favorites-hero-box > div:first-child {
+  background: #ffffff;
+  color: #151515;
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+[data-theme="light"] .dealer-copy h1,
+[data-theme="light"] .garage-text h2,
+[data-theme="light"] .favorites-hero h1,
+[data-theme="light"] .dealer-info h2,
+[data-theme="light"] .dealer-info-cards h3 {
+  color: #151515;
+}
+
+[data-theme="light"] .dealer-lead,
+[data-theme="light"] .garage-text p,
+[data-theme="light"] .favorites-hero p,
+[data-theme="light"] .garage-item span,
+[data-theme="light"] .favorites-summary span,
+[data-theme="light"] .dealer-info-cards p {
+  color: #555;
+}
+
+[data-theme="light"] .garage-item,
+[data-theme="light"] .dealer-info-cards article,
+[data-theme="light"] .favorites-summary {
+  background: #ffffff;
+  color: #151515;
+  border-color: rgba(193, 18, 31, 0.20);
+}
+
+[data-theme="light"] .garage-item strong,
+[data-theme="light"] .favorites-summary strong {
+  color: #151515;
+}
+
+/* bottone "Aggiungi altre moto" visibile in tema chiaro */
+[data-theme="light"] .favorites-summary .btn,
+[data-theme="light"] .favorites-summary .btn-secondary {
+  color: #151515;
+  border-color: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .favorites-summary .btn:hover {
+  background: rgba(193, 18, 31, 0.10);
+  border-color: rgba(193, 18, 31, 0.35);
+}
+
+/* etichette rosse sempre leggibili */
+[data-theme="light"] .dealer-label,
+[data-theme="light"] .eyebrow,
+[data-theme="light"] .dealer-section-title span {
+  color: #c1121f;
+}
+
+/* navbar più leggibile in chiaro */
+[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .nav-links a {
+  color: #333;
+}
+
+[data-theme="light"] .nav-links a.active,
+[data-theme="light"] .nav-links a:hover {
+  color: #151515;
+  background: rgba(193, 18, 31, 0.12);
+  border-color: rgba(193, 18, 31, 0.25);
+}
