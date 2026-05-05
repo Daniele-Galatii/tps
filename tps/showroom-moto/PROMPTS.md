@@ -1,22 +1,73 @@
-# Diario dei prompt (Showroom Moto)
+# Diario dei prompt – Showroom Moto
 
-1) Prompt v1
-"Genera una mini webapp showroom moto con 3 pagine (home, catalogo, preferiti) usando solo HTML/CSS/JS e senza API. Deve essere responsive e con layout moderno."
+## Prompt v1 – Creazione base progetto
+"Genera una mini webapp front-end per uno showroom di moto utilizzando solo HTML, CSS e JavaScript (senza API esterne). 
+La webapp deve avere almeno 3 pagine distinte: Home, Catalogo e Preferiti. 
+Struttura semplice ma funzionante, con collegamenti tra le pagine."
 
-2) Prompt v2 (miglioramento struttura)
-"Aggiungi HTML semantico (header/nav/main/section/footer), accessibilità (label, aria-label, alt immagini, focus visibile) e una navbar responsive con hamburger."
+---
 
-3) Prompt v3 (funzioni catalogo)
-"Nel catalogo inserisci ricerca live, filtro per categoria e ordinamento per nome/prezzo/anno con reset filtri."
+## Prompt v2 – Struttura semantica e accessibilità
+"Migliora la struttura HTML rendendola semantica utilizzando tag come header, nav, main, section e footer. 
+Aggiungi elementi di accessibilità: attributi aria-label dove necessario, immagini con alt descrittivo, 
+link 'salta al contenuto', focus visibile per la navigazione da tastiera. 
+Implementa anche una navbar responsive con hamburger menu per dispositivi mobili."
 
-4) Prompt v4 (modale e qualità)
-"Implementa modale dettagli con chiusura ESC e click fuori. Evita rischi di injection: usa createElement/textContent invece di inserire input utente con innerHTML."
+---
 
-5) Prompt v5 (localStorage e UX)
-"Aggiungi preferiti salvati in localStorage con badge in navbar e toast di notifica 'aggiunto/rimosso'."
+## Prompt v3 – Funzionalità catalogo
+"Implementa nella pagina catalogo:
+- una barra di ricerca con aggiornamento dinamico
+- filtro per categoria (motard, sportiva, naked)
+- ordinamento per nome, prezzo e anno
+- pulsante di reset per azzerare i filtri
 
-6) Prompt v6 (tema e form)
-"Aggiungi tema dark/light persistente e un form con validazione client-side (obbligatorio, email) con messaggi di errore vicino ai campi."
+Le modifiche devono aggiornare dinamicamente i risultati senza ricaricare la pagina."
 
-7) Prompt v7 (rifinitura grafica)
-"Rifinisci il CSS: variabili :root, transizioni leggere, grid/flex, breakpoint 768px e 1024px, card e pulsanti coerenti."
+---
+
+## Prompt v4 – Modale e sicurezza
+"Aggiungi una finestra modale per mostrare i dettagli completi di una moto quando si clicca su 'Dettagli'. 
+La modale deve chiudersi con:
+- tasto ESC
+- click fuori dalla modale
+- pulsante di chiusura
+
+Evita rischi di sicurezza: non inserire contenuti utente con innerHTML, 
+ma usa createElement e textContent per generare dinamicamente il DOM."
+
+---
+
+## Prompt v5 – Preferiti e localStorage
+"Implementa un sistema di preferiti:
+- possibilità di aggiungere/rimuovere una moto
+- salvataggio dei dati in localStorage
+- badge numerico aggiornato nella navbar
+- pagina dedicata ai preferiti
+
+Aggiungi notifiche toast quando una moto viene aggiunta o rimossa."
+
+---
+
+## Prompt v6 – Tema e form
+"Aggiungi:
+- tema dark/light con toggle e salvataggio in localStorage
+- un form per richiedere test ride con validazione client-side
+
+Il form deve includere:
+- campi obbligatori
+- validazione email
+- messaggi di errore vicino ai campi
+- blocco invio se dati non validi"
+
+---
+
+## Prompt v7 – Miglioramento grafico e responsive
+"Rifinisci l'interfaccia grafica:
+- utilizza variabili CSS (:root) per colori e spaziature
+- layout con Flexbox e Grid
+- breakpoint responsive almeno a 768px e 1024px
+- stile coerente tra tutte le pagine
+- aggiungi transizioni leggere su hover e interazioni
+
+Obiettivo: ottenere un design moderno, pulito e coerente tra Home, Catalogo e Preferiti."
