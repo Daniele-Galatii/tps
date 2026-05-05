@@ -16,58 +16,72 @@
         <span>DG Motor Showroom</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navLinks">
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="catalogo.html">Catalogo</a>
-        <a href="preferiti.html" class="active">Preferiti <span id="favCount" class="count-badge">0</span></a>
+        <a href="preferiti.html" class="active">
+          Preferiti <span id="favCount" class="count-badge">0</span>
+        </a>
       </nav>
 
-      <button id="themeBtn" class="theme-btn" aria-label="Cambia tema">◐</button>
+      <button id="themeBtn" class="theme-btn">◐</button>
     </div>
   </header>
 
   <main id="mainContent">
+
+    <!-- HERO PREFERITI -->
     <section class="favorites-hero">
-  <div class="container favorites-hero-box">
-    <div>
-      <span class="dealer-label">Garage personale</span>
-      <h1>Le moto che hai messo da parte.</h1>
-      <p>
-        Questa pagina raccoglie i modelli salvati nei preferiti, così puoi ritrovarli
-        velocemente senza tornare ogni volta nel catalogo.
-      </p>
-    </div>
+      <div class="container favorites-hero-box">
 
-    <div class="favorites-summary">
-      <strong id="favoritesInfo">0 preferiti</strong>
-      <span>salvati nel tuo showroom</span>
-      <a href="catalogo.html" class="btn btn-secondary">Aggiungi altre moto</a>
-    </div>
-  </div>
-</section>
+        <div>
+          <span class="dealer-label">Garage personale</span>
+          <h1>Le moto che hai messo da parte.</h1>
+          <p>
+            Questa pagina raccoglie i modelli salvati nei preferiti,
+            così puoi ritrovarli velocemente senza tornare nel catalogo.
+          </p>
+        </div>
 
-    
+        <div class="favorites-summary">
+          <strong id="favoritesInfo">0 preferiti</strong>
+          <span>salvati nel tuo showroom</span>
+
+          <a href="catalogo.html" class="btn btn-secondary">
+            Aggiungi altre moto
+          </a>
+
+          <button id="clearFavoritesBtn" class="btn btn-primary" type="button">
+            Svuota tutto
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GRID -->
     <section class="catalog-grid-section">
       <div class="container">
-        <div class="favorites-topbar">
-          <button id="clearFavoritesBtn" class="btn btn-secondary" type="button">Svuota tutto</button>
-        </div>
 
         <div id="favoritesGrid" class="catalog-grid"></div>
 
         <div id="emptyState" class="empty-state hidden">
           <h2>Nessun preferito salvato</h2>
           <p>Aggiungi qualche moto dal catalogo per vederla qui.</p>
-          <a href="catalogo.html" class="btn btn-primary">Vai al catalogo</a>
+          <a href="catalogo.html" class="btn btn-primary">
+            Vai al catalogo
+          </a>
         </div>
+
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -76,7 +90,7 @@
     </div>
   </footer>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="toast" class="toast"></div>
 
   <script src="app.js"></script>
 </body>
