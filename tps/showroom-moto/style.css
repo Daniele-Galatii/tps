@@ -1255,3 +1255,149 @@ body {
     height: 240px;
   }
 }
+
+
+/* === UPGRADE NAVBAR + HERO PIÙ SHOWROOM === */
+
+.site-header {
+  background: rgba(8, 8, 10, 0.88);
+  border-bottom: 1px solid rgba(215, 25, 32, 0.28);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.logo::after {
+  content: "Premium Bikes";
+  margin-left: 12px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(215, 25, 32, 0.16);
+  color: #ff6b6b;
+  border: 1px solid rgba(215, 25, 32, 0.35);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+.nav-links a {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(215, 25, 32, 0.18);
+  border-color: rgba(215, 25, 32, 0.35);
+  color: #fff;
+}
+
+/* HERO più dinamica */
+.dealer-copy {
+  position: relative;
+  padding: 34px;
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(215, 25, 32, 0.12), transparent 45%),
+    rgba(18, 18, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.dealer-copy::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.dealer-copy h1 {
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  text-transform: uppercase;
+}
+
+.dealer-lead {
+  max-width: 560px;
+  font-size: 1rem;
+}
+
+.dealer-points div {
+  border-left: 4px solid var(--accent);
+  background:
+    linear-gradient(135deg, rgba(215, 25, 32, 0.12), rgba(255, 255, 255, 0.03));
+}
+
+.dealer-points strong {
+  color: #fff;
+  font-size: 1.9rem;
+}
+
+.dealer-points span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+/* blocco servizi meno noioso */
+.dealer-info {
+  background:
+    linear-gradient(90deg, rgba(215, 25, 32, 0.10), transparent 55%);
+  border-top: 1px solid rgba(215, 25, 32, 0.18);
+  border-bottom: 1px solid rgba(215, 25, 32, 0.18);
+}
+
+.dealer-info-cards {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dealer-info-cards article {
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+  transition: 0.25s ease;
+}
+
+.dealer-info-cards article:hover {
+  transform: translateY(-5px);
+  border-color: rgba(215, 25, 32, 0.45);
+}
+
+.dealer-info-cards article::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  bottom: -35px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.12);
+}
+
+.dealer-info-cards h3 {
+  color: #fff;
+  font-size: 1.35rem;
+}
+
+.dealer-info h2 {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .dealer-info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .logo::after {
+    display: none;
+  }
+}
