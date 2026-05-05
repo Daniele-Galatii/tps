@@ -19,7 +19,7 @@ const bikes = [
     year: 2022,
     cc: 999,
     hp: 210,
-    price: 17990,
+    price: 21650,
     img: "assets/bmw.JPG",
     desc: "La BMW S 1000 RR è la super sportiva per eccellenza: una fusione di potenza bruta e tecnologia millimetrica."
   },
