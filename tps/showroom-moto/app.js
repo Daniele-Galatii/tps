@@ -349,7 +349,7 @@ function removeFavorite(id) {
   updateFavoriteBadge();
 }
 
-let currentVisible = 6;
+let currentVisible = 100;
 
 function getFilteredBikes() {
   const searchValue = qs("#searchInput") ? qs("#searchInput").value.trim().toLowerCase() : "";
