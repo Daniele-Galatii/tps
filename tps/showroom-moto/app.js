@@ -176,8 +176,18 @@ function isFavorite(id) {
 
 function updateFavoriteBadge() {
   const badge = qs("#favCount");
+
   if (badge) {
     badge.textContent = getFavorites().length;
+    badge.classList.remove("bump");
+
+    setTimeout(() => {
+      badge.classList.add("bump");
+    }, 10);
+
+    setTimeout(() => {
+      badge.classList.remove("bump");
+    }, 300);
   }
 }
 
