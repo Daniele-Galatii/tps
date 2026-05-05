@@ -1672,3 +1672,28 @@ body {
   transform: scale(1.35);
   background: #ff2a2a;
 }
+
+/* breakpoint richiesto a 1024px */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dealer-hero-grid,
+  .garage-grid,
+  .favorites-hero-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* stato disabled richiesto */
+button:disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
