@@ -1,1 +1,51 @@
-a
+<!DOCTYPE html>
+<html lang="it" data-page="carrello">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrello Ecommerce</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-content">
+    <div>
+      <h1 id="shopTitle">Ecommerce</h1>
+      <p id="shopCategory">Categoria prodotti</p>
+    </div>
+
+    <nav>
+      <a href="index.html">Catalogo</a>
+      <a href="ini.html">Configura</a>
+      <a href="carrello.html">Carrello <span id="cartCount">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="intro">
+    <h2>Carrello</h2>
+    <p>Qui trovi i prodotti aggiunti al basket.</p>
+  </section>
+
+  <section id="cartItems" class="cart-list"></section>
+
+  <section class="cart-summary">
+    <h3>Totale: <span id="cartTotal">0.00 €</span></h3>
+
+    <button id="pdfButton" class="btn-product" type="button">
+      Genera PDF ordine
+    </button>
+
+    <button id="clearCartButton" class="btn-secondary" type="button">
+      Svuota carrello
+    </button>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
