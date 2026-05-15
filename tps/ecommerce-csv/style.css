@@ -134,13 +134,29 @@ main {
 .btn-remove {
   background: #fee2e2;
   color: #b91c1c;
+  width: 120px;
+  height: 44px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-item-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: right;
 }
 
 .btn-remove:hover {
   background: #fecaca;
 }
 
-/* HEADER */
 .site-header {
   background:
     linear-gradient(135deg, var(--dark), var(--dark-soft));
@@ -185,7 +201,6 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/* INTRO */
 .intro {
   margin: 34px 0 24px;
 }
@@ -199,7 +214,6 @@ nav a:hover {
   color: var(--muted);
 }
 
-/* CATALOGO */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,7 +264,6 @@ nav a:hover {
   margin: 16px 0;
 }
 
-/* DETTAGLIO */
 .product-detail {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -300,7 +313,6 @@ nav a:hover {
   font-weight: 700;
 }
 
-/* CARRELLO */
 .cart-list {
   display: grid;
   gap: 16px;
@@ -312,10 +324,10 @@ nav a:hover {
   border-radius: 18px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  padding: 20px;
+  padding: 22px;
   display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 18px;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 20px;
   align-items: center;
 }
 
@@ -347,7 +359,6 @@ nav a:hover {
   margin-bottom: 12px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
