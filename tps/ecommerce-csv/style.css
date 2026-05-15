@@ -548,5 +548,44 @@ button:hover {
 
 
 body {
-  background: red !important;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.12), transparent 32%),
+    linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%) !important;
+}
+
+.product-content {
+  background: #ffffff !important;
+}
+
+.product-card {
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  box-shadow: 0 16px 35px rgba(15,23,42,0.14) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) !important;
+}
+
+.product-content h3 {
+  font-size: 1.35rem !important;
+}
+
+.product-price {
+  color: #2563eb !important;
+  font-size: 1.45rem !important;
+}
+
+.btn-product {
+  background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+  border-radius: 14px !important;
+}
+
+.cart-item {
+  grid-template-columns: 1.2fr 2fr 120px 120px !important;
+}
+
+.btn-remove {
+  width: 120px !important;
+  height: 44px !important;
 }
