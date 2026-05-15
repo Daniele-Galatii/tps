@@ -2,9 +2,49 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Ecommerce CSV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurazione Ecommerce</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Configurazione Ecommerce</h1>
+
+  <main class="config-page">
+
+    <section class="config-box">
+      <h1>Configurazione piattaforma</h1>
+      <p>Imposta il nome del negozio e la categoria prodotti.</p>
+
+      <form id="configForm">
+
+        <div class="field">
+          <label for="shopName">Nome negozio</label>
+          <input
+            type="text"
+            id="shopName"
+            placeholder="Es. Electronic Hub"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="shopCategory">Categoria</label>
+          <input
+            type="text"
+            id="shopCategory"
+            placeholder="Es. Elettronica"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn-save">
+          Salva configurazione
+        </button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
