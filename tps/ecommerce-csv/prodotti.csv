@@ -1,7 +1,7 @@
 marca,modello,descrizione,immagine,prezzo
-Arduino,Arduino Uno R4,"Scheda di sviluppo ideale per progetti elettronici e automazione.","https://docs.arduino.cc/static/arduino-uno-r4-wifi.jpg",34.99
-Raspberry,Raspberry Pi 5,"Mini computer versatile per programmazione e sistemi embedded.","https://assets.raspberrypi.com/static/raspberry-pi-5-hero-2x-c1f0a5d2e0f4f9c0d3b7f2b7b8e5d5f7.png",89.99
-ESP32,ESP32 DevKit,"Microcontrollore con Wi-Fi e Bluetooth integrato.","https://upload.wikimedia.org/wikipedia/commons/9/94/ESP32_Espressif_ESP-WROOM-32_Dev_Board.jpg",12.99
-Sensore,DHT11,"Sensore di temperatura e umidità per progetti smart.","https://upload.wikimedia.org/wikipedia/commons/3/3f/DHT11.jpg",5.99
-Display,LCD 16x2,"Display LCD per mostrare dati e informazioni nei progetti.","https://upload.wikimedia.org/wikipedia/commons/7/7a/HD44780_LCD_controller.jpg",7.49
-Modulo,Relay 5V,"Modulo relè per controllare dispositivi elettrici.","https://upload.wikimedia.org/wikipedia/commons/8/8e/Relay_Module.jpg",4.99
+Arduino,Arduino Uno R4,"Scheda di sviluppo ideale per progetti elettronici e automazione.","assets/arduino.jpg",34.99
+Raspberry,Raspberry Pi 5,"Mini computer versatile per programmazione e sistemi embedded.","assets/raspberry.jpg",89.99
+ESP32,ESP32 DevKit,"Microcontrollore con Wi-Fi e Bluetooth integrato.","assets/esp32.jpg",12.99
+Sensore,DHT11,"Sensore di temperatura e umidità per progetti smart.","assets/dht11.jpg",5.99
+Display,LCD 16x2,"Display LCD per mostrare dati e informazioni nei progetti.","assets/lcd.jpg",7.49
+Modulo,Relay 5V,"Modulo relè per controllare dispositivi elettrici.","assets/relay.jpg",4.99
