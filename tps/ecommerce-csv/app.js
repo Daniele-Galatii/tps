@@ -266,9 +266,72 @@ function generatePDF() {
   const cart = getCart();
 
   if (cart.length === 0) {
-    alert("Il carrello è vuoto.");
+    showToast("Il carrello è vuoto");
     return;
   }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const config = getConfig();
+  const shopName = config ? config.nome : "Ecommerce";
+
+  let total = 0;
+
+  doc.setFillColor(15, 23, 42);
+  doc.rect(0, 0, 210, 35, "F");
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(20);
+  doc.text(shopName, 14, 18);
+
+  doc.setFontSize(10);
+  doc.text("Ricevuta ordine ecommerce", 14, 27);
+
+  doc.setTextColor(15, 23, 42);
+  doc.setFontSize(16);
+  doc.text("Riepilogo acquisto", 14, 50);
+
+  doc.setDrawColor(220, 226, 235);
+  doc.line(14, 56, 196, 56);
+
+  let y = 68;
+
+  cart.forEach((product, index) => {
+    const price = Number(product.prezzo);
+    total += price;
+
+    doc.setFontSize(11);
+    doc.setTextColor(15, 23, 42);
+    doc.text(`${index + 1}. ${product.modello}`, 14, y);
+
+    doc.setFontSize(9);
+    doc.setTextColor(100, 116, 139);
+    doc.text(`Marca: ${product.marca}`, 14, y + 6);
+
+    doc.setFontSize(11);
+    doc.setTextColor(37, 99, 235);
+    doc.text(`${price.toFixed(2)} euro`, 165, y);
+
+    y += 18;
+  });
+
+  doc.setDrawColor(220, 226, 235);
+  doc.line(14, y + 2, 196, y + 2);
+
+  doc.setFontSize(15);
+  doc.setTextColor(15, 23, 42);
+  doc.text("Totale ordine:", 14, y + 16);
+
+  doc.setTextColor(37, 99, 235);
+  doc.text(`${total.toFixed(2)} euro`, 165, y + 16);
+
+  doc.setFontSize(9);
+  doc.setTextColor(100, 116, 139);
+  doc.text("Documento generato automaticamente tramite jsPDF.", 14, 285);
+
+  doc.save("ordine-ecommerce.pdf");
+}
 
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
