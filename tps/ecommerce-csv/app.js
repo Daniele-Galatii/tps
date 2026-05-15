@@ -46,7 +46,7 @@ function createProductCard(product, index) {
   content.className = "product-content";
 
   const title = document.createElement("h3");
-  title.textContent = product.marca + " " + product.modello;
+  title.textContent = product.modello;
 
   const desc = document.createElement("p");
   desc.textContent = product.descrizione;
