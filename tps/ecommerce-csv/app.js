@@ -75,7 +75,6 @@ function addToCart(product) {
   cart.push(product);
   saveCart(cart);
   updateCartCount();
-
   showToast("Prodotto aggiunto al carrello");
 }
 
@@ -283,29 +282,39 @@ function generatePDF() {
   const shopName = config ? config.nome : "Ecommerce";
 
   let total = 0;
-
-  doc.setFillColor(15, 23, 42);
-  doc.rect(0, 0, 210, 35, "F");
-
-  doc.setTextColor(255, 255, 255);
-  doc.setFontSize(20);
-  doc.text(shopName, 14, 18);
-
-  doc.setFontSize(10);
-  doc.text("Ricevuta ordine ecommerce", 14, 27);
-
-  doc.setTextColor(15, 23, 42);
-  doc.setFontSize(16);
-  doc.text("Riepilogo acquisto", 14, 50);
-
-  doc.setDrawColor(220, 226, 235);
-  doc.line(14, 56, 196, 56);
-
   let y = 68;
+
+  function drawHeader() {
+    doc.setFillColor(15, 23, 42);
+    doc.rect(0, 0, 210, 35, "F");
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(20);
+    doc.text(shopName, 14, 18);
+
+    doc.setFontSize(10);
+    doc.text("Ricevuta ordine ecommerce", 14, 27);
+
+    doc.setTextColor(15, 23, 42);
+    doc.setFontSize(16);
+    doc.text("Riepilogo acquisto", 14, 50);
+
+    doc.setDrawColor(220, 226, 235);
+    doc.line(14, 56, 196, 56);
+
+    y = 68;
+  }
+
+  drawHeader();
 
   cart.forEach((product, index) => {
     const price = Number(product.prezzo);
     total += price;
+
+    if (y > 260) {
+      doc.addPage();
+      drawHeader();
+    }
 
     doc.setFontSize(11);
     doc.setTextColor(15, 23, 42);
@@ -321,6 +330,11 @@ function generatePDF() {
 
     y += 18;
   });
+
+  if (y > 245) {
+    doc.addPage();
+    drawHeader();
+  }
 
   doc.setDrawColor(220, 226, 235);
   doc.line(14, y + 2, 196, y + 2);
