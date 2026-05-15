@@ -24,8 +24,8 @@ function parseCSV(text) {
 
   return rows.slice(1).map(row => {
     const values = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
-
     const product = {};
+
     headers.forEach((header, index) => {
       product[header.trim()] = values[index].replaceAll('"', "").trim();
     });
@@ -38,6 +38,22 @@ async function getProducts() {
   const response = await fetch("prodotti.csv");
   const text = await response.text();
   return parseCSV(text);
+}
+
+function getCart() {
+  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const count = document.getElementById("cartCount");
+  if (!count) return;
+
+  const cart = getCart();
+  count.textContent = cart.length;
 }
 
 function createProductCard(product, index) {
@@ -162,14 +178,6 @@ async function loadProductDetail() {
   }
 }
 
-function getCart() {
-  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-}
-
-function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
-}
-
 function addToCart(product) {
   const cart = getCart();
   cart.push(product);
@@ -178,12 +186,125 @@ function addToCart(product) {
   alert("Prodotto aggiunto al carrello.");
 }
 
-function updateCartCount() {
-  const count = document.getElementById("cartCount");
-  if (!count) return;
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+
+  if (!cartItems || !cartTotal) return;
 
   const cart = getCart();
-  count.textContent = cart.length;
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.textContent = "Il carrello è vuoto.";
+    cartTotal.textContent = "0.00 €";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((product, index) => {
+    total += Number(product.prezzo);
+
+    const item = document.createElement("article");
+    item.className = "cart-item";
+
+    const title = document.createElement("h3");
+    title.textContent = product.modello;
+
+    const desc = document.createElement("p");
+    desc.textContent = product.marca + " - " + product.descrizione;
+
+    const price = document.createElement("strong");
+    price.textContent = product.prezzo + " €";
+
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "btn-remove";
+    removeBtn.textContent = "Rimuovi";
+    removeBtn.addEventListener("click", () => {
+      removeFromCart(index);
+    });
+
+    item.appendChild(title);
+    item.appendChild(desc);
+    item.appendChild(price);
+    item.appendChild(removeBtn);
+
+    cartItems.appendChild(item);
+  });
+
+  cartTotal.textContent = total.toFixed(2) + " €";
+}
+
+function removeFromCart(index) {
+  const cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  updateCartCount();
+  renderCart();
+}
+
+function clearCart() {
+  saveCart([]);
+  updateCartCount();
+  renderCart();
+}
+
+function generatePDF() {
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    alert("Il carrello è vuoto.");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const config = getConfig();
+  const shopName = config ? config.nome : "Ecommerce";
+
+  doc.setFontSize(18);
+  doc.text("Ordine - " + shopName, 10, 15);
+
+  doc.setFontSize(11);
+  doc.text("Riepilogo prodotti acquistati", 10, 25);
+
+  let y = 40;
+  let total = 0;
+
+  cart.forEach((product, index) => {
+    total += Number(product.prezzo);
+
+    doc.text(
+      `${index + 1}. ${product.marca} ${product.modello} - ${product.prezzo} euro`,
+      10,
+      y
+    );
+
+    y += 8;
+  });
+
+  y += 8;
+  doc.setFontSize(14);
+  doc.text("Totale: " + total.toFixed(2) + " euro", 10, y);
+
+  doc.save("ordine-ecommerce.pdf");
+}
+
+function initCartPage() {
+  renderCart();
+
+  const pdfButton = document.getElementById("pdfButton");
+  const clearCartButton = document.getElementById("clearCartButton");
+
+  if (pdfButton) {
+    pdfButton.addEventListener("click", generatePDF);
+  }
+
+  if (clearCartButton) {
+    clearCartButton.addEventListener("click", clearCart);
+  }
 }
 
 const configForm = document.getElementById("configForm");
@@ -214,3 +335,4 @@ updateHeader();
 updateCartCount();
 loadProducts();
 loadProductDetail();
+initCartPage();
