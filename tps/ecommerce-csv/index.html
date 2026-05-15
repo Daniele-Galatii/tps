@@ -1,1 +1,38 @@
-a
+<!DOCTYPE html>
+<html lang="it" data-page="catalogo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo Ecommerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-content">
+    <div>
+      <h1 id="shopTitle">Ecommerce</h1>
+      <p id="shopCategory">Categoria prodotti</p>
+    </div>
+
+    <nav>
+      <a href="ini.html">Configura</a>
+      <a href="carrello.html">Carrello <span id="cartCount">0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>Catalogo prodotti</h2>
+    <p>I prodotti vengono caricati automaticamente dal file CSV.</p>
+  </section>
+
+  <section id="productsGrid" class="products-grid" aria-live="polite"></section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
