@@ -178,12 +178,24 @@ async function loadProductDetail() {
   }
 }
 
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1800);
+}
+
 function addToCart(product) {
   const cart = getCart();
   cart.push(product);
   saveCart(cart);
   updateCartCount();
-  alert("Prodotto aggiunto al carrello.");
+  showToast("Prodotto aggiunto al carrello");
 }
 
 function renderCart() {
