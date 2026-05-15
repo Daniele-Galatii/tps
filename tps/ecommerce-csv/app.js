@@ -27,11 +27,17 @@ function parseCSV(text) {
 
     const product = {};
     headers.forEach((header, index) => {
-      product[header.trim()] = values[index].replaceAll('"', '').trim();
+      product[header.trim()] = values[index].replaceAll('"', "").trim();
     });
 
     return product;
   });
+}
+
+async function getProducts() {
+  const response = await fetch("prodotti.csv");
+  const text = await response.text();
+  return parseCSV(text);
 }
 
 function createProductCard(product, index) {
@@ -76,9 +82,7 @@ async function loadProducts() {
   if (!grid) return;
 
   try {
-    const response = await fetch("prodotti.csv");
-    const text = await response.text();
-    const products = parseCSV(text);
+    const products = await getProducts();
 
     grid.innerHTML = "";
 
@@ -90,11 +94,95 @@ async function loadProducts() {
   }
 }
 
+function getProductIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return Number(params.get("id"));
+}
+
+async function loadProductDetail() {
+  const detail = document.getElementById("productDetail");
+  if (!detail) return;
+
+  try {
+    const products = await getProducts();
+    const id = getProductIdFromUrl();
+    const product = products[id];
+
+    if (!product) {
+      detail.textContent = "Prodotto non trovato.";
+      return;
+    }
+
+    detail.innerHTML = "";
+
+    const image = document.createElement("img");
+    image.src = product.immagine;
+    image.alt = product.modello;
+
+    const info = document.createElement("div");
+    info.className = "detail-info";
+
+    const brand = document.createElement("p");
+    brand.className = "detail-brand";
+    brand.textContent = product.marca;
+
+    const title = document.createElement("h2");
+    title.textContent = product.modello;
+
+    const desc = document.createElement("p");
+    desc.textContent = product.descrizione;
+
+    const price = document.createElement("p");
+    price.className = "product-price";
+    price.textContent = product.prezzo + " €";
+
+    const addButton = document.createElement("button");
+    addButton.className = "btn-product";
+    addButton.textContent = "Aggiungi al carrello";
+    addButton.addEventListener("click", () => {
+      addToCart(product);
+    });
+
+    const backLink = document.createElement("a");
+    backLink.href = "index.html";
+    backLink.className = "back-link";
+    backLink.textContent = "← Torna al catalogo";
+
+    info.appendChild(brand);
+    info.appendChild(title);
+    info.appendChild(desc);
+    info.appendChild(price);
+    info.appendChild(addButton);
+    info.appendChild(backLink);
+
+    detail.appendChild(image);
+    detail.appendChild(info);
+  } catch (error) {
+    detail.textContent = "Errore nel caricamento del dettaglio prodotto.";
+  }
+}
+
+function getCart() {
+  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  cart.push(product);
+  saveCart(cart);
+  updateCartCount();
+  alert("Prodotto aggiunto al carrello.");
+}
+
 function updateCartCount() {
   const count = document.getElementById("cartCount");
   if (!count) return;
 
-  const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+  const cart = getCart();
   count.textContent = cart.length;
 }
 
@@ -125,3 +213,4 @@ if (configForm) {
 updateHeader();
 updateCartCount();
 loadProducts();
+loadProductDetail();
