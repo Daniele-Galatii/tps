@@ -1,9 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>COVID-19</title>
+    <meta charset="UTF-8">
+    <title>Dati COVID-19 Italia</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
-    <h1>Dati COVID-19 Italia</h1>
+
+    <h1>Andamento COVID-19 in Italia</h1>
+    <p>Dati nazionali della Protezione Civile</p>
+
+    <table id="tabella"></table>
+
+    <script>
+        const url = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(dati => {
+
+                const tabella = document.getElementById("tabella");
+
+                const colonne = [
+                    "data",
+                    "totale_positivi",
+                    "nuovi_positivi",
+                    "terapia_intensiva",
+                    "deceduti"
+                ];
+
+                // Crea la riga con i nomi delle colonne
+                let intestazione = document.createElement("tr");
+
+                colonne.forEach(colonna => {
+                    let th = document.createElement("th");
+                    th.textContent = colonna;
+                    intestazione.appendChild(th);
+                });
+
+                tabella.appendChild(intestazione);
+
+                // Crea una riga per ogni giorno
+                dati.forEach(giorno => {
+                    let riga = document.createElement("tr");
+
+                    Object.keys(giorno).forEach(chiave => {
+                        if (colonne.includes(chiave)) {
+                            let td = document.createElement("td");
+                            td.textContent = giorno[chiave];
+                            riga.appendChild(td);
+                        }
+                    });
+
+                    tabella.appendChild(riga);
+                });
+
+            });
+    </script>
+
 </body>
 </html>
