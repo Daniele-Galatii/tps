@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Persone JSON</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Elenco persone</h1>
+    <p>Dati caricati da un file JSON</p>
+
+    <table id="tabella">
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Sport</th>
+            <th>Età</th>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
