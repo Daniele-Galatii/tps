@@ -1,0 +1,35 @@
+[
+  {
+    "nome": "Andrea",
+    "cognome": "Rossi",
+    "sport": [
+      {
+        "tipo1": "Calcio",
+        "tipo2": "Tennis"
+      }
+    ],
+    "eta": 18
+  },
+  {
+    "nome": "Luca",
+    "cognome": "Bianchi",
+    "sport": [
+      {
+        "tipo1": "Basket",
+        "tipo2": "Nuoto"
+      }
+    ],
+    "eta": 19
+  },
+  {
+    "nome": "Marco",
+    "cognome": "Verdi",
+    "sport": [
+      {
+        "tipo1": "Pallavolo",
+        "tipo2": "Ciclismo"
+      }
+    ],
+    "eta": 17
+  }
+]
